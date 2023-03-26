@@ -2,6 +2,12 @@ import { createWebHistory, createRouter } from "vue-router";
 import ContactBook from "@/views/ContactBook.vue";
 const routes = [
     {
+        path: "/contacts-create/:create",
+        name: "contact.create",
+        component: () => import("@/views/CreateContact.vue"),
+        props: true // Truyền các biến trong $route.params vào làm props
+    },
+    {
         path: "/contacts/:id",
         name: "contact.edit",
         component: () => import("@/views/ContactEdit.vue"),
